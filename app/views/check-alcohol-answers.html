@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers before moving on
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Is alcohol monitoring needed?"
+            },
+            value: {
+              text: data['alcohol-monitoring']
+            },
+            actions: {
+              items: [
+                {
+                  href: "alcohol-monitoring",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "What type of alcohol monitoring is needed?"
+            },
+            value: {
+              text: data['alcohol-monitoring-type']
+            },
+            actions: {
+              items: [
+                {
+                  href: "alcohol-monitoring-type",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Question 3"
+            },
+            value: {
+              text: "Answer 3"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+     
+      <form class="form" action="/equipment-installation-extra-info" method="post">
+        <h2 class="govuk-heading-m">
+          Next section
+        </h2>
+  
+        <p>
+         You can start the next section of the form now. 
+  
+  
+         
+        </p>
+        
+        
+  
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+  
+        </form>
+
+    </div>
+  </div>
+{% endblock %}

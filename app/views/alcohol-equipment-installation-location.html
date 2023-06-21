@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+
+      <form class="form" action="/alcohol-installation-location-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "alcohol-monitoring-installation-location",
+  fieldset: {
+    legend: {
+      text: "Where should the alcohol monitoring equipment be installed??",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "curfew-address",
+      text: "At the curfew address, during curfew hours"
+    },
+    {
+      value: "different-address",
+      text: "At another approved address"
+    },
+    {
+      value: "probation-office",
+      text: "At the probation office"
+    },
+    {
+      value: "prison",
+      text: "At the prison when the offender is released"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
