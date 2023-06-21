@@ -16,16 +16,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    
+      <h1 class="govuk-heading-l"> What time does the curfew start and end on {{data['prisoner-name']}}'s release day?</h1>
       <form class="form" action="/check-curfew-answers" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "What time does the curfew start on their release day?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Curfew start time",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
           id: "curfew-release-start",
           name: "curfew-release-start"
@@ -33,9 +33,9 @@
         
         {{ govukInput({
           label: {
-            text: "What time does the curfew end on their release day?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Curfew end time",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
           id: "curfew-release-end",
           name: "curfew-release-end"
