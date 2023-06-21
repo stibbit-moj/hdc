@@ -16,16 +16,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    
+      <h1 class="govuk-heading-l"> What time does the curfew start and end on a Saturday?</h1>
       <form class="form" action="/curfew-sunday" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "What time does the curfew start on Saturdays?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Curfew start time",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
           id: "curfew-saturday-start",
           name: "curfew-saturday-start"
@@ -33,9 +33,9 @@
         
         {{ govukInput({
           label: {
-            text: "What time does the curfew end on Saturdays?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Curfew end time",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
           id: "curfew-saturday-end",
           name: "curfew-saturday-end"

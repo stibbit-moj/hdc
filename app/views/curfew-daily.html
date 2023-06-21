@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      
+      <h1 class="govuk-heading-l"> What are the start and end times for the curfew?</h1>
 
       <form class="form" action="/check-curfew-answers" method="post">
 
@@ -24,9 +24,9 @@
 
 {{ govukInput({
   label: {
-    text: "What time does the curfew start?",
-    classes: "govuk-label--l",
-    isPageHeading: true
+    text: "Curfew start time",
+    classes: "govuk-label--m",
+    isPageHeading: false
   },
   id: "curfew-daily-start",
   name: "curfew-daily-start"
@@ -34,9 +34,9 @@
 
 {{ govukInput({
   label: {
-    text: "What time does the curfew end?",
-    classes: "govuk-label--l",
-    isPageHeading: true
+    text: "Curfew end time",
+    classes: "govuk-label--m",
+    isPageHeading: false
   },
   id: "curfew-daily-end",
   name: "curfew-daily-end"

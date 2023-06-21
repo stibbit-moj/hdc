@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-     
+      <h1 class="govuk-heading-l"> What time does the curfew start and end on a Friday?</h1>
 
       <form class="form" action="/curfew-saturday" method="post">
 
@@ -24,9 +24,9 @@
 
         {{ govukInput({
           label: {
-            text: "What time does the curfew start on Fridays?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Curfew start time",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
           id: "curfew-friday-start",
           name: "curfew-friday-start"
@@ -34,9 +34,9 @@
         
         {{ govukInput({
           label: {
-            text: "What time does the curfew end on Fridays?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Curfew end time",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
           id: "curfew-friday-end",
           name: "curfew-friday-end"
